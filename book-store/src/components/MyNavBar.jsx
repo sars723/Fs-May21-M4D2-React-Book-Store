@@ -2,7 +2,13 @@ import { Navbar, Nav } from "react-bootstrap";
 const MyNavBar = ({ title }) => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="#home">{title}</Navbar.Brand>
+      <Navbar.Brand href="#home">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0K2zTxBIc-_v9gmDHfFN6mNx3xJn2tBel-65HEvPmUF9_ssB2WRsNPj3Rf-ejRo4DTwM&usqp=CAU"
+          alt=""
+          style={{ width: "120px" }}
+        />
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">

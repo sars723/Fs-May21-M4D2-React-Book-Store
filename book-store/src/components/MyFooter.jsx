@@ -3,9 +3,14 @@ import "./css/MyFooterStyles.css";
 
 const MyFooter = () => {
   return (
-    <div className="MyFooter ">
-      <p>copyright</p>
-    </div>
+    <footer
+      className="MyFooter container-fluid"
+      expand="lg"
+      bg="dark"
+      variant="dark"
+    >
+      <p className="text-center">Copyright © 2019. All Rights Reserved</p>
+    </footer>
   );
 };
 
