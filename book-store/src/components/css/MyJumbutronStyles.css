@@ -3,5 +3,12 @@
   background-repeat: no-repeat;
   object-fit: cover;
   background-size: auto;
-  color: rgb(45, 110, 7);
+  color: rgb(12, 12, 11);
+}
+.jumbotron-div {
+  padding-left: 100px;
+  font-weight: bolder;
+}
+.jumbotron-div h1 {
+  font-weight: bolder;
 }
