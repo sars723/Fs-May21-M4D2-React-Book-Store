@@ -9,21 +9,31 @@ import fantasyBooks from "./data/fantasy.json";
 import romanceBooks from "./data/romance.json"
 import horrerBooks from "./data/horrer.json";
 import historyBooks from "./data/history.json";
+import React,{ Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <MyNavBar title="BookStore"/>
-      <MyJumbotron/>
-    
-     
-      <MyCarousel books={romanceBooks} title="Romance"/>
-      <MyCarousel books={fantasyBooks} title="Fantasy"/>
-      <MyCarousel books={horrerBooks} title="Horrer"/>
-      <MyCarousel books={historyBooks} title="Romance"/> 
-       <MyFooter />
-    </div>
-  );
+class App extends Component {
+  state={
+    query:"",
+    books:fantasyBooks,
+    filterdBooks:""
+
+  }
+  render(){
+    return (
+      <div className="App">
+        <MyNavBar books={fantasyBooks}/*  searchCallback={(childSearchquery)=>this.setState({query:childSearchquery})} */ filterdBooksCallback={(childFilterdBooks)=>this.setState({filterdBooks:childFilterdBooks})}/>
+        <MyJumbotron/>
+      
+       
+        <MyCarousel books={romanceBooks} filBooks={this.state.filterdBooks} title="Romance"/>
+        <MyCarousel books={fantasyBooks} searchQuery={this.state.query} title="Fantasy"/>
+        <MyCarousel books={horrerBooks}  searchQuery={this.state.query} title="Horrer"/>
+        <MyCarousel books={historyBooks}  searchQuery={this.state.query} title="Romance"/> 
+         <MyFooter />
+      </div>
+    );
+  }
+ 
 }
 
 export default App;
